@@ -1,0 +1,6 @@
+lib/grammar.js linguist-generated=true
+lib/mixins/function.js linguist-generated=true
+lib/mixins/json.js linguist-generated=true
+lib/mixins/logic.js linguist-generated=true
+lib/mixins/statement.js linguist-generated=true
+lib/mixins/variables.js linguist-generated=true
