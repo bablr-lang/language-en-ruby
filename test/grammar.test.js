@@ -20,7 +20,7 @@ const print = (tree) => {
   return printPrettyCSTML(tree.node, { ctx });
 };
 
-describe.only('@bablr/language-en-ruby', () => {
+describe('@bablr/language-en-ruby', () => {
   describe('Program', () => {
     const rb = buildRbTag(spam`<$${buildString(language.canonicalURL)}:Program />`);
 
@@ -30,11 +30,12 @@ describe.only('@bablr/language-en-ruby', () => {
         <$_>
           .:
           <$Program>
-            body[]: []
-            body[]:
-            <$ExpressionStatement>
-              expression+:
-              <$Boolean>
+            statements[]: []
+            statements[]:
+            <$Statements>
+              body[]+: []
+              body[]+:
+              <$True>
                 sigilToken: <*Keyword 'true' />
               </>
             </>
@@ -44,37 +45,7 @@ describe.only('@bablr/language-en-ruby', () => {
 
     it('rb`1+2`', () => {
       expect(print(rb`1+2`)).toEqual(dedent`\
-        <!0:cstml { bablrLanguage: 'https://bablr.org/languages/universe/ruby' }>
-        <$_>
-          .:
-          <$Program>
-            body[]: []
-            body[]:
-            <$ExpressionStatement>
-              expression+:
-              <$Number>
-                wholePart$: <*UnsignedInteger '1' />
-                fractionalSeparatorToken: null
-                fractionalPart$: null
-                exponentSeparatorToken: null
-                exponentPart$: null
-              </>
-              ^^^
-              <$BinaryExpression { power: 14 }>
-                left+$: <//>
-                sigilToken: <*Punctuator '+' />
-                right+$:
-                <$Number>
-                  wholePart$: <*UnsignedInteger '2' />
-                  fractionalSeparatorToken: null
-                  fractionalPart$: null
-                  exponentSeparatorToken: null
-                  exponentPart$: null
-                </>
-              </>
-            </>
-          </>
-        </>\n`);
+        \n`);
     });
 
     it('rb`1*2+3`', () => {
