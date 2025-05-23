@@ -1,3 +1,3 @@
-# @bablr/language-en-es3
+# @bablr/language-en-ruby
 
-A BABLR language for ES3, also known as the third version of JavaScript (TM)
+A BABLR language for ruby.
