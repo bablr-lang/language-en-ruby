@@ -22,7 +22,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@babel/runtime": "7.24.6",
+    "@babel/runtime": "7.28.2",
     "@bablr/agast-vm-helpers": "0.7.1",
     "@bablr/boot": "0.8.1",
     "@bablr/helpers": "0.22.1"
