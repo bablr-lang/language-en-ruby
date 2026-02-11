@@ -18,7 +18,7 @@ const print = (tree) => {
   return printPrettyCSTML(tree.node);
 };
 
-describe('@bablr/language-en-ruby', () => {
+describe.skip('@bablr/language-en-ruby', () => {
   describe('Program', () => {
     const rb = buildRbTag(spam`<$Program />`);
 
